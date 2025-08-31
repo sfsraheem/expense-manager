@@ -45,7 +45,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  
+
   /* shadcn/ui variables */
   --card: 0 0% 100%;
   --card-foreground: 222.2 84% 4.9%;
@@ -71,7 +71,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    
+
     /* shadcn/ui dark mode variables */
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
