@@ -82,7 +82,7 @@ export default function Home() {
               <span className="text-sm text-gray-600">
                 Welcome, {profile?.full_name || user?.email}
               </span>
-              <Button asChild variant="ghost" size="sm">
+              <Button asChild variant="ghost" size="sm" className="text-gray-900">
                 <a href="/profile">Profile</a>
               </Button>
               <Button onClick={handleSignOut} variant="outline" size="sm">
@@ -97,20 +97,20 @@ export default function Home() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Card>
             <CardHeader>
-              <CardTitle>Current Balance</CardTitle>
-              <CardDescription>Your available funds</CardDescription>
+              <CardTitle className="text-gray-900">Current Balance</CardTitle>
+              <CardDescription className="text-gray-600">Your available funds</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">
-                ${profile?.current_balance?.toFixed(2) || "0.00"}
+              <div className="text-2xl font-bold text-gray-900">
+                PKR {profile?.current_balance?.toFixed(2) || "0.00"}
               </div>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>Recent Expenses</CardTitle>
-              <CardDescription>Your latest transactions</CardDescription>
+              <CardTitle className="text-gray-900">Recent Expenses</CardTitle>
+              <CardDescription className="text-gray-600">Your latest transactions</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-gray-600">No recent expenses</p>
@@ -119,8 +119,8 @@ export default function Home() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Quick Actions</CardTitle>
-              <CardDescription>Manage your expenses</CardDescription>
+              <CardTitle className="text-gray-900">Quick Actions</CardTitle>
+              <CardDescription className="text-gray-600">Manage your expenses</CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
               <Button className="w-full">Add Expense</Button>

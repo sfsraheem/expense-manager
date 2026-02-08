@@ -126,8 +126,8 @@ export default function ProfilePage() {
       <div className="min-h-screen flex items-center justify-center">
         <Card className="w-full max-w-md">
           <CardHeader>
-            <CardTitle>Error</CardTitle>
-            <CardDescription>Unable to load profile</CardDescription>
+            <CardTitle className="text-gray-900">Error</CardTitle>
+            <CardDescription className="text-gray-600">Unable to load profile</CardDescription>
           </CardHeader>
           <CardContent>
             <Button asChild>
@@ -158,22 +158,22 @@ export default function ProfilePage() {
         <div className="space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>Account Information</CardTitle>
-              <CardDescription>Your profile details</CardDescription>
+              <CardTitle className="text-gray-900">Account Information</CardTitle>
+              <CardDescription className="text-gray-600">Your profile details</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <Label>Name</Label>
+                <Label className="text-gray-900">Name</Label>
                 <p className="text-sm text-gray-700">
                   {profile.full_name || "Not provided"}
                 </p>
               </div>
               <div>
-                <Label>Email</Label>
+                <Label className="text-gray-900">Email</Label>
                 <p className="text-sm text-gray-700">{profile.email}</p>
               </div>
               <div>
-                <Label>Member Since</Label>
+                <Label className="text-gray-900">Member Since</Label>
                 <p className="text-sm text-gray-700">
                   {new Date(profile.created_at).toLocaleDateString()}
                 </p>
@@ -183,21 +183,21 @@ export default function ProfilePage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Balance Management</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-gray-900">Balance Management</CardTitle>
+              <CardDescription className="text-gray-600">
                 Update your current balance to keep track of your finances
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <Label>Starting Balance</Label>
+                <Label className="text-gray-900">Starting Balance</Label>
                 <p className="text-sm text-gray-700">
-                  ${profile.starting_balance?.toFixed(2) || "0.00"}
+                  PKR {profile.starting_balance?.toFixed(2) || "0.00"}
                 </p>
               </div>
 
               <div>
-                <Label htmlFor="current-balance">Current Balance</Label>
+                <Label htmlFor="current-balance" className="text-gray-900">Current Balance</Label>
                 {isEditing ? (
                   <div className="space-y-3">
                     <Input
@@ -226,8 +226,8 @@ export default function ProfilePage() {
                   </div>
                 ) : (
                   <div className="flex items-center justify-between">
-                    <p className="text-lg font-semibold">
-                      ${profile.current_balance?.toFixed(2) || "0.00"}
+                    <p className="text-lg font-semibold text-gray-900">
+                      PKR {profile.current_balance?.toFixed(2) || "0.00"}
                     </p>
                     <Button
                       onClick={() => setIsEditing(true)}
